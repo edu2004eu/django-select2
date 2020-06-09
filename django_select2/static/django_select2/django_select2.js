@@ -15,7 +15,7 @@
   }
 
   var initHeavy = function ($element, options) {
-    var settings = $.extend({
+    var settings = $.extend(true, {
       ajax: {
         data: function (params) {
           var result = {
