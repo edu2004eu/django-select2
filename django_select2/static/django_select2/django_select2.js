@@ -62,7 +62,7 @@
   }
 
   $(function () {
-    $('.django-select2').djangoSelect2()
+    $('.django-select2:not(.django-select2-manual-init)').djangoSelect2()
   })
 
   return $.fn.djangoSelect2
