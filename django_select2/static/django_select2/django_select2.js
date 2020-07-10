@@ -28,7 +28,14 @@
           if (dependentFields) {
             dependentFields = dependentFields.trim().split(/\s+/)
             $.each(dependentFields, function (i, dependentField) {
-              result[dependentField] = $('[name=' + dependentField + ']', $element.closest('form')).val()
+              var dependentFieldElement = $('[name=' + dependentField + ']', $element.closest('form'));
+
+              if(dependentFieldElement.is('[type=radio]')){
+                result[dependentField] = dependentFieldElement.filter(':checked').val();
+              }
+              else {
+                result[dependentField] = dependentFieldElement.val()
+              }
             })
           }
 
